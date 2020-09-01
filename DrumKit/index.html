@@ -4,57 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drum Kit</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="keys">
    
         <div data-key="65" class="key">
             <kbd>A</kbd>
+        </div>
+
+        <div data-key="10" class="key">
+            <kbd>A</kbd>
             <span class="sound">Kick</span>
         </div>
-
-        <div data-key="" class="key">
-            <kbd>A</kbd>
-            <span class="sound"></span>
-        </div>
-
-        <div data-key="" class="key">
-            <kbd>A</kbd>
-            <span class="sound"></span>
-        </div>
-
-        <div data-key="" class="key">
-            <kbd>A</kbd>
-            <span class="sound"></span>
-        </div>
-
-        <div data-key="" class="key">
-            <kbd>A</kbd>
-            <span class="sound"></span>
-        </div>
-
-        <div data-key="" class="key">
-            <kbd>A</kbd>
-            <span class="sound"></span>
-        </div>
-
-        <div data-key="" class="key">
-            <kbd>A</kbd>
-            <span class="sound"></span>
-        </div>
-
-        <div data-key="" class="key">
-            <kbd>A</kbd>
-            <span class="sound"></span>
-        </div>
-
-        <div data-key="" class="key">
-            <kbd>A</kbd>
-            <span class="sound"></span>
-        </div>
-   
     </div>
 
   <audio data-key="65"src="./sounds/crash.mp3"></audio>  
+  
+<script>
+    window.addEventListener('keydown', function (e) {
+        const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`)
+
+        const key = document.querySelector(`.key[data-key="${e.keyCode}"]`)
+        
+        if(!audio) return; // stop the funcition from running all together
+        audio.currentTime = 0; // rewind to start
+        
+        audio.play()
+        key.classList.add('playing')
+        console.log(key)
+    })
+
+    const keys = document.querySelectorAll('.key')
+
+</script>
 </body>
 </html>

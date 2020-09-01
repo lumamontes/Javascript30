@@ -1,0 +1,23 @@
+ *{
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+
+
+ .key {
+     width: 150px;
+     margin: 1rem;
+     background: black;
+     color: white;
+     border-radius: 6px;
+
+     transition: all 0.07s;
+ }
+
+
+ .playing {
+     transform: scale(1.1);
+     border-color: red;
+     box-shadow: 0 0 10px red;
+ }
