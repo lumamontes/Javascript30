@@ -29,18 +29,27 @@ body::after{
     justify-content: center;
     align-items: center;
 }
+kbd {
+    font-size: 2rem;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
  .key {
      width: 100px;
      
      margin: 1rem;
      
-     background: rgb(0, 0, 0);
-     color: rgb(255, 255, 255);
+    background-color: transparent;
+     color: rgb(231, 235, 8);
      
      border-radius: 6px;
      border: 1px solid white;
      
      transition: all 0.07s;
+
+     display: flex;
+     flex-direction: column;
+     align-items: center;
  }
 
 
