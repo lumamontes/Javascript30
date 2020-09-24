@@ -65,3 +65,68 @@ const transportation = data.reduce(function(obj,item) {
 ,{})
 
 console.log(transportation)
+
+
+const people = [ 
+    { name: 'Beck', year: 1970}, {name: 'Becker, Carl', year: 2004} 
+]
+
+
+
+const comments = [
+    {text: 'LOve this!', id=523423},
+    {text: 'Super love this!', id=823423},
+    {text: 'Nice!', id=223423},
+]
+
+
+// Some and Every Checks
+
+// Array.prototype.some() // is a least one person 19?
+
+const isAdult = people.some (function(person) {
+
+    const currentYear = (new Date()).getFullYear()
+    if (currentYear - person.year >= 19) {
+        return true
+    }
+}) 
+
+
+// OR
+
+
+const isAdult = people.some(person => {
+    const Currentyear = (new Date()).getFullYear();
+    return CurrentYear - personyear >= 19;
+})
+
+
+// is everyone 19?
+
+const allAdults = people.every(person => {
+    const CurrentYear = (new Date()).getFullYear();
+    return CurrentYear - personyear >= 19;
+})
+
+
+// Array.prototype.find()
+// return the first item it finds, that you are looking for
+
+const comment = comments.find( function(coment) {
+    if (comment.id === 823423) {
+        return true
+    }
+})
+
+// Array.protype.findIndex()
+// find the position of the comment
+const index = comments.findIndex( comment => comment.id === 823423)
+//delete the cmment
+
+comments.splice(index, 1)
+
+const newCOmments = [
+    ...comments.slice(0, index),
+    ...comments.slice(index + 1),
+]
